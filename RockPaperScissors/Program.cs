@@ -24,12 +24,7 @@ namespace RockPaperScissors
                 Move move1 = player1.NextMove();
                 Move move2 = player2.NextMove();
 
-                int result = Miscellaneous.DisplayRoundResult(move1, move2, player1, player2);
-
-                if (result == 1)
-                    player1.Score++;
-                else if (result == 2)
-                    player2.Score++;
+                Miscellaneous.DisplayRoundResult(move1, move2, player1, player2);
 
                 Console.WriteLine($"Score: {player1.Score} - {player2.Score}");
                 round++;

@@ -3,7 +3,6 @@
 /Users/has/Desktop/RPStheo/RPS/RockPaperScissors/bin/Debug/netcoreapp2.0/Framework.runtimeconfig.dev.json
 /Users/has/Desktop/RPStheo/RPS/RockPaperScissors/bin/Debug/netcoreapp2.0/Framework.dll
 /Users/has/Desktop/RPStheo/RPS/RockPaperScissors/bin/Debug/netcoreapp2.0/Framework.pdb
-/Users/has/Desktop/RPStheo/RPS/RockPaperScissors/obj/Debug/netcoreapp2.0/Framework.csprojResolveAssemblyReference.cache
 /Users/has/Desktop/RPStheo/RPS/RockPaperScissors/obj/Debug/netcoreapp2.0/Framework.csproj.CoreCompileInputs.cache
 /Users/has/Desktop/RPStheo/RPS/RockPaperScissors/obj/Debug/netcoreapp2.0/Framework.AssemblyInfoInputs.cache
 /Users/has/Desktop/RPStheo/RPS/RockPaperScissors/obj/Debug/netcoreapp2.0/Framework.AssemblyInfo.cs

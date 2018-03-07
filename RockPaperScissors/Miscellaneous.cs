@@ -9,7 +9,7 @@ namespace RockPaperScissors
         public static List<Move> Player1Moves { get; set; } = new List<Move>();
         public static List<Move> Player2Moves { get; set; } = new List<Move>();
 
-        public static int DisplayRoundResult(Move move1, Move move2, IPlayer p1, IPlayer p2)
+        public static void DisplayRoundResult(Move move1, Move move2, IPlayer p1, IPlayer p2)
         {
             Player1Moves.Add(move1);
             Player2Moves.Add(move2);
@@ -27,7 +27,6 @@ namespace RockPaperScissors
             if (result == 0)
             {
                 Console.WriteLine("Tie");
-                return 0; // 0 == tie
             }
             else if (result == 1 || result == -2)
             {
@@ -35,7 +34,7 @@ namespace RockPaperScissors
                 Console.WriteLine($"Player 1 ({p1.Name}) wins!");
                 Console.ForegroundColor = ConsoleColor.White;
 
-                return 1; // 1 == p1 won
+                p1.Score++;
             }
             else
             {
@@ -43,7 +42,7 @@ namespace RockPaperScissors
                 Console.WriteLine($"Player 2 ({p2.Name}) wins!");
                 Console.ForegroundColor = ConsoleColor.White;
 
-                return 2; // 2 == p2 won
+                p2.Score++;
             }
         }
     }
