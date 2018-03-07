@@ -35,7 +35,7 @@ namespace RockPaperScissors
                 round++;
             }
 
-            bool player1Won = player1.Score == 3;
+            bool player1Won = player1.Score == targetScore;
             Console.WriteLine($"\n\nThe winner is Player {(player1Won ? 1 : 2)} ({(player1Won ? player1.Name : player2.Name)}). Well done {(player1Won ? player1.Owner : player2.Owner)}");
             Console.ReadKey();
         }
