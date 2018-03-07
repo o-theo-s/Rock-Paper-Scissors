@@ -2,6 +2,7 @@
 
 namespace RockPaperScissors.Players.Has
 {
+    //The winner class
     public partial class HasPlayer : IPlayer
     {
         public int ID { get; set; }

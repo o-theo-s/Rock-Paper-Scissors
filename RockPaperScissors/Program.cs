@@ -10,57 +10,33 @@ namespace RockPaperScissors
         static void Main(string[] args)
         {
             Console.ForegroundColor = ConsoleColor.White;
-            Console.WriteLine("Welcome to the Rock Paper Scissors Competition!");
+            Console.WriteLine("Welcome to the Rock Paper Scissors Competition!\n");
+            Console.WriteLine("What is the target score? Enter a number: ");
+            int targetScore = Int32.Parse(Console.ReadLine());
 
             IPlayer player1 = new RandomPlayer();
             IPlayer player2 = new RandomPlayer();
 
             int round = 1;
-            while (player1.Score < 3 && player2.Score < 3)
+            while (player1.Score < targetScore && player2.Score < targetScore)
             {
                 Console.WriteLine($"\nRound {round}:");
                 Move move1 = player1.NextMove();
                 Move move2 = player2.NextMove();
-                int result = move1 - move2;
 
-                Console.ForegroundColor = ConsoleColor.Magenta;
-                Console.Write(move1.ToString());
-                Console.ForegroundColor = ConsoleColor.White;
-                Console.Write(" vs ");
-                Console.ForegroundColor = ConsoleColor.Cyan;
-                Console.WriteLine(move2.ToString());
-                Console.ForegroundColor = ConsoleColor.White;
+                int result = Miscellaneous.DisplayRoundResult(move1, move2, player1, player2);
 
-                if (result == 0)
-                {
-                    Console.WriteLine("Tie");
-                }
-                else if (result == 1 || result == -2)
-                {
-                    Console.ForegroundColor = ConsoleColor.Magenta;
-                    Console.WriteLine($"Player 1 ({player1.Name}) wins!");
-                    Console.ForegroundColor = ConsoleColor.White;
-
+                if (result == 1)
                     player1.Score++;
-                }
-                else
-                {
-                    Console.ForegroundColor = ConsoleColor.Cyan;
-                    Console.WriteLine($"Player 2 ({player2.Name}) wins!");
-                    Console.ForegroundColor = ConsoleColor.White;
-
+                else if (result == 2)
                     player2.Score++;
-                }
-
-                Miscellaneous.Player1Moves.Add(move1);
-                Miscellaneous.Player2Moves.Add(move2);
 
                 Console.WriteLine($"Score: {player1.Score} - {player2.Score}");
                 round++;
             }
 
-            bool player1Win = player1.Score == 3;
-            Console.WriteLine($"\n\nThe winner is Player {(player1Win ? 1 : 2)} ({(player1Win ? player1.Name : player2.Name)}). Well done {(player1Win ? player1.Owner : player2.Owner)}");
+            bool player1Won = player1.Score == 3;
+            Console.WriteLine($"\n\nThe winner is Player {(player1Won ? 1 : 2)} ({(player1Won ? player1.Name : player2.Name)}). Well done {(player1Won ? player1.Owner : player2.Owner)}");
             Console.ReadKey();
         }
     }
